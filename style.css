@@ -314,4 +314,15 @@ h2:hover, h3:hover {
     .btn-dark-mode {
         margin-top: 10px;
     }
+    
+    .btn-dark-mode.dark-mode {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .btn-dark-mode.dark-mode:hover {
+        background-color: #f0f0f0;
+        color: #333;
+    }
+    
 }
