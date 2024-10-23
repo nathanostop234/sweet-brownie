@@ -134,6 +134,17 @@ nav ul li a.dark-mode {
     transform: translateY(-3px);
 }
 
+/* Estilo quando o Dark Mode estiver ativo */
+.btn-dark-mode.dark-mode {
+    background-color: #fff; /* Botão branco no modo escuro */
+    color: #000; /* Texto preto no modo escuro */
+}
+
+.btn-dark-mode.dark-mode:hover {
+    background-color: #f0f0f0; /* Ajuste no hover */
+    color: #333;
+}
+
 .produtos {
     padding: 50px 0;
     background-color: #fff;
@@ -152,8 +163,8 @@ nav ul li a.dark-mode {
     letter-spacing: 2px;
 }
 
-.produtos h2.dark-mode {
-    color: #fff;
+.produtos.dark-mode h2 {
+    color: #fff; /* Título Produtos em branco no dark mode */
 }
 
 .grid-produtos {
@@ -213,7 +224,7 @@ nav ul li a.dark-mode {
 }
 
 .sobre.dark-mode {
-    background-color: #d3d3d3;
+    background-color: #d3d3d3; /* Cinza claro para a seção Sobre Nós no dark mode */
 }
 
 .sobre h2 {
@@ -278,10 +289,6 @@ footer {
     padding: 15px 0;
 }
 
-footer.dark-mode {
-    background-color: #000;
-}
-
 footer p {
     font-size: 1.2em;
 }
@@ -314,15 +321,4 @@ h2:hover, h3:hover {
     .btn-dark-mode {
         margin-top: 10px;
     }
-    
-    .btn-dark-mode.dark-mode {
-        background-color: #fff;
-        color: #000;
-    }
-    
-    .btn-dark-mode.dark-mode:hover {
-        background-color: #f0f0f0;
-        color: #333;
-    }
-    
 }
