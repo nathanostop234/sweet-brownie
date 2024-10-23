@@ -168,9 +168,9 @@ nav ul li a.dark-mode {
 
 .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
     gap: 30px;
-    max-width: 800px;
+    max-width: 1000px; 
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -180,7 +180,7 @@ nav ul li a.dark-mode {
 }
 
 .produto {
-    padding: 20px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -199,9 +199,10 @@ nav ul li a.dark-mode {
 }
 
 .produto h3 {
-    font-size: 1.6em;
+    font-size: 1.8em; 
     margin-bottom: 10px;
     color: #000;
+    text-transform: uppercase; 
 }
 
 .produto.dark-mode h3 {
@@ -209,7 +210,7 @@ nav ul li a.dark-mode {
 }
 
 .produto p {
-    font-size: 1.2em;
+    font-size: 1.3em; 
     color: #666;
 }
 
@@ -219,7 +220,7 @@ nav ul li a.dark-mode {
 
 .produto .preco {
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.5em; 
     margin-bottom: 15px;
     color: #333;
 }
