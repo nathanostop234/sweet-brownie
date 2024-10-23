@@ -13,8 +13,8 @@ body {
 }
 
 body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #2c2c2c;
+    color: #ffffff;
 }
 
 header {
@@ -28,7 +28,7 @@ header {
 }
 
 header.dark-mode {
-    background-color: #1f1f1f;
+    background-color: #4d4d4d;
 }
 
 .container {
@@ -69,7 +69,7 @@ nav ul li a:hover {
 }
 
 nav ul li a.dark-mode {
-    color: #e0e0e0;
+    color: #ffffff;
 }
 
 .hero {
@@ -81,7 +81,7 @@ nav ul li a.dark-mode {
 }
 
 .hero.dark-mode {
-    background-color: #1c1c1c;
+    background-color: #4d4d4d;
 }
 
 .hero h2 {
@@ -140,7 +140,7 @@ nav ul li a.dark-mode {
 }
 
 .produtos.dark-mode {
-    background-color: #2c2c2c;
+    background-color: #4d4d4d;
 }
 
 .produtos h2 {
@@ -172,8 +172,8 @@ nav ul li a.dark-mode {
 }
 
 .produto.dark-mode {
-    background-color: #333;
-    border-color: #555;
+    background-color: #666666;
+    color: #ffffff;
 }
 
 .produto:hover {
@@ -188,7 +188,7 @@ nav ul li a.dark-mode {
 }
 
 .produto.dark-mode h3 {
-    color: #fff;
+    color: #ffffff;
 }
 
 .produto .preco {
@@ -199,7 +199,7 @@ nav ul li a.dark-mode {
 }
 
 .produto.dark-mode .preco {
-    color: #fff;
+    color: #ffffff;
 }
 
 .sobre {
@@ -209,7 +209,8 @@ nav ul li a.dark-mode {
 }
 
 .sobre.dark-mode {
-    background-color: #1f1f1f;
+    background-color: #4d4d4d;
+    color: #ffffff;
 }
 
 .sobre h2 {
@@ -226,6 +227,14 @@ nav ul li a.dark-mode {
     max-width: 800px;
     margin: auto;
     line-height: 1.8;
+}
+
+.sobre.dark-mode h2 {
+    color: #ffffff;
+}
+
+.sobre.dark-mode p {
+    color: #ffffff;
 }
 
 .social-buttons {
@@ -275,7 +284,8 @@ footer {
 }
 
 footer.dark-mode {
-    background-color: #121212;
+    background-color: #4d4d4d;
+    color: #ffffff;
 }
 
 footer p {
