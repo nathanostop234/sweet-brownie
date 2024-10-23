@@ -13,19 +13,22 @@ body {
 }
 
 body.dark-mode {
-    background-color: #333; 
+    background-color: #2e2e2e;
     color: #e0e0e0;
 }
 
 header {
     background-color: #fff;
+    color: #000;
     padding: 20px 0;
     text-align: center;
+    position: relative;
+    z-index: 10;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 header.dark-mode {
-    background-color: #444;
+    background-color: #3e3e3e;
 }
 
 .container {
@@ -39,6 +42,8 @@ header.dark-mode {
 
 .logo img {
     max-width: 180px;
+    height: auto;
+    display: block;
 }
 
 nav ul {
@@ -68,21 +73,65 @@ nav ul li a.dark-mode {
 }
 
 .hero {
-    background: linear-gradient(to top, #000, #666);
+    background: linear-gradient(to top, #000000, #666666); 
     padding: 150px 20px;
     text-align: center;
     color: #fff;
+    position: relative;
 }
 
 .hero.dark-mode {
-    background-color: #1c1c1c;
+    background-color: #3c3c3c;
 }
 
 .hero h2 {
     font-size: 4em;
     margin-bottom: 20px;
+    text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.btn-dark-mode {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.btn-dark-mode:hover {
+    background-color: #555;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
 }
 
 .produtos {
@@ -91,7 +140,7 @@ nav ul li a.dark-mode {
 }
 
 .produtos.dark-mode {
-    background-color: #444;
+    background-color: #4a4a4a;
 }
 
 .produtos h2 {
@@ -99,10 +148,8 @@ nav ul li a.dark-mode {
     text-align: center;
     margin-bottom: 40px;
     color: #000;
-}
-
-.produtos.dark-mode h2 {
-    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .grid-produtos {
@@ -111,18 +158,48 @@ nav ul li a.dark-mode {
     gap: 30px;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .produto {
     background-color: #fff;
     padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .produto.dark-mode {
-    background-color: #555;
+    background-color: #5e5e5e;
+    border-color: #777;
+}
+
+.produto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.produto h3 {
+    font-size: 2em;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.produto.dark-mode h3 {
+    color: #fff;
+}
+
+.produto .preco {
+    font-size: 2.2em;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.produto.dark-mode .preco {
+    color: #fff;
 }
 
 .sobre {
@@ -131,8 +208,59 @@ nav ul li a.dark-mode {
     text-align: center;
 }
 
-.sobre.dark-mode {
-    background-color: #dcdcdc; 
+.sobre h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sobre p {
+    font-size: 1.5em;
+    color: #333;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.btn-whatsapp {
+    padding: 15px 30px;
+    background-color: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05);
+}
+
+.btn-instagram {
+    padding: 15px 30px;
+    background-color: #E1306C;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-instagram:hover {
+    background-color: #c2285e;
+    transform: scale(1.05);
 }
 
 footer {
@@ -143,21 +271,21 @@ footer {
 }
 
 footer.dark-mode {
-    background-color: #000;
+    background-color: #3a3a3a;
 }
 
-.btn-dark-mode {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s ease;
+footer p {
+    font-size: 1.2em;
 }
 
-.btn-dark-mode:hover {
-    background-color: #555;
+h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+h2:hover, h3:hover {
+    color: #666;
 }
 
 @media (max-width: 768px) {
@@ -168,6 +296,11 @@ footer.dark-mode {
 
     nav ul {
         flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
     }
 
     .btn-dark-mode {
