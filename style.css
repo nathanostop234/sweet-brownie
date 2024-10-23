@@ -9,6 +9,7 @@ body {
     background-color: #f7f7f7;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 header {
@@ -16,6 +17,9 @@ header {
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -28,67 +32,88 @@ header {
 }
 
 .logo img {
-    max-width: 150px;
+    max-width: 180px; /* Ajuste o tamanho da logomarca conforme necessário */
     height: auto;
     display: block;
 }
 
-/* Navegação */
 nav ul {
     display: flex;
     list-style: none;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.5em;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 1.3em;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ccc;
+    color: #ffcc00;
+    transform: scale(1.1);
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
-    padding: 100px 20px;
+    background: url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
+    padding: 150px 20px;
     text-align: center;
     color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h2, .hero p {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h2 {
-    font-size: 3.5em;
+    font-size: 4em;
     margin-bottom: 20px;
     text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-bottom: 30px;
 }
 
 .btn {
     padding: 15px 30px;
-    background-color: #fff;
+    background-color: #ffcc00;
     color: #000;
     text-decoration: none;
     font-size: 1.5em;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
 }
 
+/* Seção de Produtos */
 .produtos {
     padding: 50px 0;
     background-color: #fff;
@@ -99,27 +124,30 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 40px;
     color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
     padding: 0 20px;
 }
 
 .produto {
-    background-color: #f9f9f9;
+    background-color: #fff;
     padding: 20px;
-    border: 2px solid #000;
+    border: 1px solid #ddd;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .produto:hover {
     transform: translateY(-10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .produto h3 {
@@ -129,27 +157,32 @@ nav ul li a:hover {
 }
 
 .produto .preco {
-    font-size: 2.5em;
-    color: #333;
+    font-size: 2.2em;
+    color: #ffcc00;
+    font-weight: bold;
     margin-bottom: 15px;
 }
 
 .sobre, .contato {
     padding: 50px 20px;
     background-color: #f7f7f7;
+    text-align: center;
 }
 
 .sobre h2, .contato h2 {
     font-size: 3em;
-    text-align: center;
     margin-bottom: 30px;
     color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .sobre p, .contato p {
-    text-align: center;
     font-size: 1.5em;
     color: #333;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
 }
 
 footer {
@@ -170,5 +203,24 @@ h2, h3 {
 }
 
 h2:hover, h3:hover {
-    color: #555;
+    color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.3em;
+    }
 }
