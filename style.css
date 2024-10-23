@@ -152,6 +152,10 @@ nav ul li a.dark-mode {
     letter-spacing: 2px;
 }
 
+.produtos h2.dark-mode {
+    color: #fff;
+}
+
 .grid-produtos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -206,6 +210,10 @@ nav ul li a.dark-mode {
     padding: 50px 20px;
     background-color: #f7f7f7;
     text-align: center;
+}
+
+.sobre.dark-mode {
+    background-color: #d3d3d3;
 }
 
 .sobre h2 {
@@ -271,7 +279,7 @@ footer {
 }
 
 footer.dark-mode {
-    background-color: #3a3a3a;
+    background-color: #000;
 }
 
 footer p {

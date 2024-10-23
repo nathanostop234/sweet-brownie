@@ -66,21 +66,25 @@
         const footer = document.querySelector('footer');
         const produtos = document.querySelectorAll('.produto');
         const links = document.querySelectorAll('nav ul li a');
-
+        const sobreSection = document.querySelector('.sobre');
+        const produtosTitle = document.querySelector('.produtos h2');
+    
         toggleButton.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             header.classList.toggle('dark-mode');
             produtosSection.classList.toggle('dark-mode');
             footer.classList.toggle('dark-mode');
-
+            sobreSection.classList.toggle('dark-mode');
+            produtosTitle.classList.toggle('dark-mode');
+    
             produtos.forEach(produto => {
                 produto.classList.toggle('dark-mode');
             });
-
+    
             links.forEach(link => {
                 link.classList.toggle('dark-mode');
             });
-
+    
             if (body.classList.contains('dark-mode')) {
                 toggleButton.textContent = 'Light Mode';
             } else {
@@ -88,5 +92,4 @@
             }
         });
     </script>
-</body>
-</html>
+    
