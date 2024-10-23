@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Brownie</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -60,9 +61,33 @@
     <script>
         const toggleButton = document.getElementById('dark-mode-toggle');
         const body = document.body;
+        const header = document.querySelector('header');
+        const produtosSection = document.querySelector('.produtos');
+        const sobreSection = document.querySelector('.sobre');
+        const footer = document.querySelector('footer');
+        const produtos = document.querySelectorAll('.produto');
+        const links = document.querySelectorAll('nav ul li a');
 
         toggleButton.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
+            header.classList.toggle('dark-mode');
+            produtosSection.classList.toggle('dark-mode');
+            sobreSection.classList.toggle('dark-mode');
+            footer.classList.toggle('dark-mode');
+
+            produtos.forEach(produto => {
+                produto.classList.toggle('dark-mode');
+            });
+
+            links.forEach(link => {
+                link.classList.toggle('dark-mode');
+            });
+
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
+            } else {
+                toggleButton.textContent = 'Dark Mode';
+            }
         });
     </script>
 </body>
