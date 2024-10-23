@@ -73,7 +73,7 @@ nav ul li a.dark-mode {
 }
 
 .hero {
-    background-color: #000;
+    background: linear-gradient(to top, #000000, #ffffff);;
     padding: 150px 20px;
     text-align: center;
     color: #fff;
