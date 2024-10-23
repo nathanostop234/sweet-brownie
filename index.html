@@ -33,12 +33,16 @@
         <h2>Produtos</h2>
         <div class="grid-produtos">
             <div class="produto">
-                <h3>Brownie Simples</h3>
+                <a href="https://seusite.com/brownie-simples" target="_blank">
+                    <h3>Brownie Simples</h3>
+                </a>
                 <p class="preco">R$ 7,00</p>
                 <p>Um delicioso brownie tradicional, perfeito para qualquer momento.</p>
             </div>
             <div class="produto">
-                <h3>Brownie Recheado com Ninho</h3>
+                <a href="https://seusite.com/brownie-recheado-ninho" target="_blank">
+                    <h3>Brownie Recheado com Ninho</h3>
+                </a>
                 <p class="preco">R$ 10,00</p>
                 <p>Brownie recheado com o irresistível creme de leite em pó Ninho.</p>
             </div>
@@ -66,22 +70,22 @@
         const footer = document.querySelector('footer');
         const produtos = document.querySelectorAll('.produto');
         const links = document.querySelectorAll('nav ul li a');
-    
+
         toggleButton.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
             header.classList.toggle('dark-mode');
             produtosSection.classList.toggle('dark-mode');
             footer.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark-mode'); // Adicionei isso para mudar o botão
-    
+            toggleButton.classList.toggle('dark-mode');
+
             produtos.forEach(produto => {
                 produto.classList.toggle('dark-mode');
             });
-    
+
             links.forEach(link => {
                 link.classList.toggle('dark-mode');
             });
-    
+
             if (body.classList.contains('dark-mode')) {
                 toggleButton.textContent = 'Light Mode';
             } else {
@@ -89,5 +93,3 @@
             }
         });
     </script>
-    
-    
