@@ -32,14 +32,14 @@
     <section class="produtos" id="produtos">
         <h2>Produtos</h2>
         <div class="grid-produtos">
-            <a href="https://seusite.com/brownie-simples" target="_blank">
+            <a href="#" class="produto">
                 <div class="produto">
                     <h3>BROWNIE SIMPLES</h3>
                     <p class="preco">R$ 7,00</p>
                     <p>Um delicioso brownie tradicional, perfeito para qualquer momento.</p>
                 </div>
             </a>
-            <a href="https://seusite.com/brownie-recheado-ninho" target="_blank">
+            <a href="#" class="produto">
                 <div class="produto">
                     <h3>BROWNIE RECHEADO COM NINHO</h3>
                     <p class="preco">R$ 10,00</p>
@@ -61,6 +61,14 @@
     <footer>
         <p>Sweet Brownie &copy; 2024. Todos os direitos reservados.</p>
     </footer>
+
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="Pix.png" alt="QR Code Pix" class="qr-image">
+            <button id="closeModalBtn" class="btn">Voltar para a Página Inicial</button>
+        </div>
+    </div>
 
     <script>
         const toggleButton = document.getElementById('dark-mode-toggle');
@@ -92,4 +100,33 @@
                 toggleButton.textContent = 'Dark Mode';
             }
         });
+
+        const modal = document.getElementById('qrModal');
+        const span = document.querySelector('.close');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        // Quando clicar no produto, exibir o modal
+        produtos.forEach(produto => {
+            produto.addEventListener('click', (e) => {
+                e.preventDefault(); // Evitar a navegação padrão
+                modal.style.display = "block";
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        closeModalBtn.onclick = function() {
+            modal.style.display = "none";
+            window.location.href = "#home";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
+</body>
+</html>
