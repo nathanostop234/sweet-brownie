@@ -74,7 +74,7 @@ nav ul li a:hover {
 }
 
 nav ul li a.dark-mode {
-    color: #cccccc; /* Ajuste da cor dos links no modo escuro */
+    color: #cccccc;
 }
 
 .hero {
@@ -101,7 +101,7 @@ nav ul li a.dark-mode {
 }
 
 body.dark-mode h2, body.dark-mode p {
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra no texto no modo escuro */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
 .btn {
@@ -125,7 +125,7 @@ body.dark-mode h2, body.dark-mode p {
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
-    border: 2px solid #fff; /* Borda adicional para destacar o botão */
+    border: 2px solid #fff;
     border-radius: 30px;
     font-size: 1em;
     font-weight: bold;
@@ -138,23 +138,12 @@ body.dark-mode h2, body.dark-mode p {
 .btn-dark-mode:hover {
     background-color: #555;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3px);
-}
-
-.btn-dark-mode.dark-mode {
-    background-color: #fff; 
-    color: #000;
-    border: 2px solid #000; /* Alterar a borda no modo escuro */
-}
-
-.btn-dark-mode.dark-mode:hover {
-    background-color: #ddd;
 }
 
 .produtos {
-    padding: 50px 20px;
+    padding: 50px 0;
     text-align: center;
-    background-color: #fff;
+    background-color: #fafafa;
 }
 
 .produtos.dark-mode {
@@ -164,147 +153,88 @@ body.dark-mode h2, body.dark-mode p {
 .produtos h2 {
     font-size: 2.5em;
     margin-bottom: 40px;
+    letter-spacing: 2px;
 }
 
 .grid-produtos {
-    display: flex; 
-    justify-content: center; 
-    flex-wrap: wrap;
-    gap: 40px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 50px;
 }
 
 .produto {
     background-color: #fff;
-    border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-}
-
-.produto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
-
-.produto a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.8em;
-}
-
-.produto a:visited {
-    color: #000;
-}
-
-.produto.dark-mode a {
-    color: #e0e0e0;
-}
-
-.produto.dark-mode a:visited {
-    color: #e0e0e0;
-}
-
-.produto.dark-mode {
-    background-color: #3f3f3f;
-    border: 1px solid #303030;
-}
-
-.produto.dark-mode h3,
-.produto.dark-mode p,
-.produto.dark-mode .preco {
-    color: #e0e0e0;
 }
 
 .produto h3 {
     font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.produto .preco {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #000000;
     margin-bottom: 10px;
+    color: #000;
 }
 
 .produto p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #666;
 }
 
-.produto .btn {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e67e22;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
+.produto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.produto .btn:hover {
-    background-color: #d35400;
-    transform: translateY(-2px);
+.produto .preco {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #000;
+}
+
+.produto.dark-mode {
+    background-color: #555;
+}
+
+.produto .preco.dark-mode {
+    color: #fff;
 }
 
 .sobre {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #f9f9f9;
+    padding: 50px;
+    background-color: #f4f4f4;
+    color: #000;
 }
 
 .sobre.dark-mode {
-    background-color: #3c3c3c;
-    color: #e0e0e0;
+    background-color: #3b3b3b;
+    color: #fff;
 }
 
 .sobre-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.sobre-container.dark-mode {
-    background-color: #444;
-    color: #e0e0e0;
+.sobre h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
 }
 
 .social-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
-.btn-whatsapp {
-    background-color: #25d366;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 30px;
+.social-buttons .btn-whatsapp, .social-buttons .btn-instagram {
     font-size: 1.2em;
-    text-decoration: none;
-}
-
-.btn-instagram {
-    background-color: #fd5949;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 1.2em;
-    text-decoration: none;
+    padding: 15px 30px;
 }
 
 footer {
@@ -315,22 +245,24 @@ footer {
 }
 
 footer p {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 footer.dark-mode {
-    background-color: #222;
+    background-color: #111;
 }
 
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); 
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
@@ -342,11 +274,41 @@ footer.dark-mode {
     width: 80%;
     max-width: 500px;
     border-radius: 10px;
+    text-align: center;
 }
 
-.modal-content.dark-mode {
-    background-color: #444;
-    color: #fff;
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.qr-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+button#closeModalBtn {
+    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
