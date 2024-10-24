@@ -156,12 +156,12 @@ body.dark-mode h2, body.dark-mode p {
 }
 
 .grid-produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
     gap: 30px;
     padding: 0 50px;
-    justify-content: center;
-    align-items: center;
+    text-align: center; 
 }
 
 .produto {
@@ -196,15 +196,12 @@ body.dark-mode h2, body.dark-mode p {
     color: #000;
 }
 
-.produto.dark-mode {
-    background-color: #555;
-}
-
-.produto .preco.dark-mode {
+.produto.dark-mode h3, 
+.produto.dark-mode p,
+.produto.dark-mode .preco {
     color: #fff;
 }
 
-/* Sobre Section */
 .sobre {
     padding: 50px;
     background-color: #f4f4f4;
@@ -386,4 +383,8 @@ button#closeModalBtn {
     nav ul li {
         margin: 5px 0;
     }
+}
+
+html {
+    scroll-behavior: smooth;
 }

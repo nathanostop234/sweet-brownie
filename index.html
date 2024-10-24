@@ -108,6 +108,20 @@
             }
         });
 
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetSection = document.querySelector(link.getAttribute('href'));
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
         const modal = document.getElementById('qrModal');
         const span = document.querySelector('.close');
         const closeModalBtn = document.getElementById('closeModalBtn');
