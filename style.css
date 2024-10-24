@@ -146,118 +146,149 @@ nav ul li a.dark-mode {
 .produtos {
     padding: 50px 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: #f9f9f9;
 }
 
 .produtos.dark-mode {
-    background-color: #444;
+    background-color: #3c3c3c;
 }
 
 .produtos h2 {
     font-size: 2.5em;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .grid-produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    gap: 40px; 
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px 0; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .produto {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    max-width: 280px;
+    flex: 1;
+    min-width: 250px;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    max-width: 300px;
-    margin: center; 
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.produto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+.produto.dark-mode {
+    background-color: #555;
+    color: #e0e0e0;
 }
 
 .produto h3 {
     font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.produto .preco {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #000000;
     margin-bottom: 10px;
 }
 
 .produto p {
     font-size: 1.2em;
-    color: #666;
 }
 
-.produto .btn {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e67e22;
-    color: white;
+.preco {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.sobre {
+    padding: 80px 20px;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+
+.sobre-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.sobre h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sobre p {
+    font-size: 1.4em;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-buttons a {
+    padding: 12px 20px;
+    font-size: 1.2em;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
 }
 
-.produto .btn:hover {
-    background-color: #d35400;
-    transform: translateY(-2px);
+.btn-whatsapp {
+    background-color: #25D366;
+}
+
+.btn-instagram {
+    background-color: #E4405F;
+}
+
+.btn-whatsapp:hover {
+    background-color: #20b558;
+}
+
+.btn-instagram:hover {
+    background-color: #c7354a;
 }
 
 footer {
+    padding: 20px;
+    text-align: center;
     background-color: #333;
     color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-footer p {
-    font-size: 1.2em;
+    position: relative;
+    z-index: 10;
 }
 
 footer.dark-mode {
-    background-color: #222;
+    background-color: #000;
 }
 
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); 
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
+    background-color: #fff;
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 500px;
+    max-width: 600px;
     text-align: center;
-}
-
-.modal-content img {
-    width: 100%;
-    height: auto;
+    border-radius: 10px;
 }
 
 .close {
@@ -265,6 +296,7 @@ footer.dark-mode {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
@@ -274,98 +306,23 @@ footer.dark-mode {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li a {
-        font-size: 1.2em;
-    }
-
-    .hero h2 {
-        font-size: 3em;
-    }
-
-    .hero p {
-        font-size: 1.5em;
-    }
-
-    .grid-produtos {
-        grid-template-columns: 1fr; 
-        gap: 20px;
-    }
-
-    .produto {
-        max-width: 100%;
-        padding: 15px;
-    }
-
-    .produto h3 {
-        font-size: 1.5em;
-    }
-
-    .produto .preco {
-        font-size: 1.3em;
-    }
-
-    .produto p {
-        font-size: 1.1em;
-    }
-
-    .btn {
-        font-size: 1.2em;
-        padding: 12px 25px;
-    }
-
-    .btn-dark-mode {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
-
-    footer p {
-        font-size: 1em;
-    }
+.qr-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px 0;
 }
 
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 2.5em;
-    }
+#closeModalBtn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-    .hero p {
-        font-size: 1.3em;
-    }
-
-    .btn {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
-
-    .produto h3 {
-        font-size: 1.2em;
-    }
-
-    .produto .preco {
-        font-size: 1.2em;
-    }
-
-    .produto p {
-        font-size: 1em;
-    }
-
-    footer p {
-        font-size: 0.9em;
-    }
+#closeModalBtn:hover {
+    background-color: #555;
 }

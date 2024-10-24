@@ -50,11 +50,13 @@
     </section>
 
     <section class="sobre" id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Somos uma confeitaria especializada em brownies, comprometida em oferecer produtos de alta qualidade. Nosso objetivo é trazer momentos doces para você e sua família.</p>
-        <div class="social-buttons">
-            <a href="https://wa.me/554196215055" target="_blank" class="btn-whatsapp">WhatsApp</a>
-            <a href="https://www.instagram.com/sweetbrownies_s?igsh=MTIwY284c3lxMXl0Zw==" target="_blank" class="btn-instagram">Instagram</a>
+        <div class="sobre-container">
+            <h2>Sobre Nós</h2>
+            <p>Na <strong>Sweet Brownie</strong>, somos apaixonados por criar momentos doces para você! Com ingredientes de alta qualidade e muito amor, nossos brownies são feitos para deixar seu dia mais especial. Nossa missão é oferecer produtos frescos e saborosos que agradem todos os paladares. Venha nos conhecer e se deliciar com o melhor brownie da cidade!</p>
+            <div class="social-buttons">
+                <a href="https://wa.me/554196215055" target="_blank" class="btn-whatsapp">Entre em Contato no WhatsApp</a>
+                <a href="https://www.instagram.com/sweetbrownies_s?igsh=MTIwY284c3lxMXl0Zw==" target="_blank" class="btn-instagram">Siga-nos no Instagram</a>
+            </div>
         </div>
     </section>
 
@@ -105,10 +107,9 @@
         const span = document.querySelector('.close');
         const closeModalBtn = document.getElementById('closeModalBtn');
 
-        // Quando clicar no produto, exibir o modal
         produtos.forEach(produto => {
             produto.addEventListener('click', (e) => {
-                e.preventDefault(); // Evitar a navegação padrão
+                e.preventDefault();
                 modal.style.display = "block";
             });
         });
