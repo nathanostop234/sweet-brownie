@@ -80,6 +80,8 @@
         const footer = document.querySelector('footer');
         const produtos = document.querySelectorAll('.produto');
         const links = document.querySelectorAll('nav ul li a');
+        const sobreSection = document.querySelector('.sobre');
+        const sobreContainer = document.querySelector('.sobre-container');
 
         toggleButton.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
@@ -95,6 +97,9 @@
             links.forEach(link => {
                 link.classList.toggle('dark-mode');
             });
+
+            sobreSection.classList.toggle('dark-mode');
+            sobreContainer.classList.toggle('dark-mode');
 
             if (body.classList.contains('dark-mode')) {
                 toggleButton.textContent = 'Light Mode';
