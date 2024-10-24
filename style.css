@@ -206,8 +206,8 @@ nav ul li a.dark-mode {
 }
 
 .produto.dark-mode {
-    background-color: #555;
-    border: 1px solid #444;
+    background-color: #3f3f3f;
+    border: 1px solid #303030;
 }
 
 .produto.dark-mode h3,
