@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 body {
@@ -73,7 +74,7 @@ nav ul li a:hover {
 }
 
 nav ul li a.dark-mode {
-    color: #e0e0e0;
+    color: #cccccc; /* Ajuste da cor dos links no modo escuro */
 }
 
 .hero {
@@ -99,6 +100,10 @@ nav ul li a.dark-mode {
     margin-bottom: 30px;
 }
 
+body.dark-mode h2, body.dark-mode p {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra no texto no modo escuro */
+}
+
 .btn {
     padding: 15px 30px;
     background-color: #fff;
@@ -120,7 +125,7 @@ nav ul li a.dark-mode {
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
-    border: none;
+    border: 2px solid #fff; /* Borda adicional para destacar o botão */
     border-radius: 30px;
     font-size: 1em;
     font-weight: bold;
@@ -138,7 +143,8 @@ nav ul li a.dark-mode {
 
 .btn-dark-mode.dark-mode {
     background-color: #fff; 
-    color: #000; 
+    color: #000;
+    border: 2px solid #000; /* Alterar a borda no modo escuro */
 }
 
 .btn-dark-mode.dark-mode:hover {
@@ -335,65 +341,10 @@ footer.dark-mode {
     border: 1px solid #888;
     width: 80%;
     max-width: 500px;
-    text-align: center;
-    padding-bottom: 50px;
+    border-radius: 10px;
 }
 
-.modal-content img {
-    max-width: 100%;
-    height: auto;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.btn-voltar {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
+.modal-content.dark-mode {
+    background-color: #444;
     color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero h2 {
-        font-size: 3em;
-    }
-
-    .hero p {
-        font-size: 1.5em;
-    }
-
-    .produtos h2 {
-        font-size: 2em;
-    }
-
-    .produto {
-        max-width: 100%;
-        padding: 15px;
-    }
 }
