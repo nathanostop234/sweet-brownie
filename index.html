@@ -73,78 +73,60 @@
     </div>
 
     <script>
-        const toggleButton = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-        const header = document.querySelector('header');
-        const produtosSection = document.querySelector('.produtos');
-        const footer = document.querySelector('footer');
-        const produtos = document.querySelectorAll('.produto');
-        const links = document.querySelectorAll('nav ul li a');
-        const sobreSection = document.querySelector('.sobre');
-        const sobreContainer = document.querySelector('.sobre-container');
+        document.addEventListener('DOMContentLoaded', () => {
 
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            header.classList.toggle('dark-mode');
-            produtosSection.classList.toggle('dark-mode');
-            footer.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+            const elementsToToggle = [
+                body, document.querySelector('header'),
+                document.querySelector('.produtos'), document.querySelector('footer'),
+                ...document.querySelectorAll('.produto'),
+                ...document.querySelectorAll('nav ul li a'),
+                document.querySelector('.sobre'),
+                document.querySelector('.sobre-container')
+            ];
 
-            produtos.forEach(produto => {
-                produto.classList.toggle('dark-mode');
+            toggleButton.addEventListener('click', () => {
+                elementsToToggle.forEach(el => el.classList.toggle('dark-mode'));
+                toggleButton.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
             });
 
-            links.forEach(link => {
-                link.classList.toggle('dark-mode');
+            const modal = document.getElementById('qrModal');
+            const span = document.querySelector('.close');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const produtoItems = document.querySelectorAll('.produto');
+
+            produtoItems.forEach(produto => {
+                produto.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.style.display = "block";
+                });
             });
 
-            sobreSection.classList.toggle('dark-mode');
-            sobreContainer.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                toggleButton.textContent = 'Light Mode';
-            } else {
-                toggleButton.textContent = 'Dark Mode';
-            }
-        });
-
-        const modal = document.getElementById('qrModal');
-        const span = document.querySelector('.close');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-
-        produtos.forEach(produto => {
-            produto.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.style.display = "block";
-            });
-        });
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        closeModalBtn.onclick = function() {
-            modal.style.display = "none";
-            window.location.href = "#home";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
+            span.onclick = function() {
                 modal.style.display = "none";
             }
-        }
 
-        const navLinks = document.querySelectorAll('nav ul li a');
+            closeModalBtn.onclick = function() {
+                modal.style.display = "none";
+                window.location.href = "#home";
+            }
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();  
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
 
-                const targetSection = document.querySelector(link.getAttribute('href'));
-
-                window.scrollTo({
-                    top: targetSection.offsetTop - 100,  
-                    behavior: 'smooth'  
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const targetSection = document.querySelector(link.getAttribute('href'));
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 100,  
+                        behavior: 'smooth'  
+                    });
                 });
             });
         });
