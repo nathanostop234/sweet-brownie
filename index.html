@@ -74,7 +74,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-
             const toggleButton = document.getElementById('dark-mode-toggle');
             const body = document.body;
             const elementsToToggle = [
@@ -123,8 +122,10 @@
                 link.addEventListener('click', (event) => {
                     event.preventDefault();
                     const targetSection = document.querySelector(link.getAttribute('href'));
+                    const offset = window.innerWidth > 768 ? 150 : 100;
+
                     window.scrollTo({
-                        top: targetSection.offsetTop - 100,  
+                        top: targetSection.offsetTop - offset,
                         behavior: 'smooth'  
                     });
                 });
