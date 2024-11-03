@@ -10,16 +10,16 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="Background.png" alt="Logo da Sweet Brownie, padaria especializada em brownies">
+                <img src="Background.png" alt="Logo Sweet Brownie">
             </div>
-            <nav role="navigation">
+            <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#produtos">Produtos</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
                 </ul>
             </nav>
-            <button id="dark-mode-toggle" class="btn-dark-mode" aria-pressed="false">Dark Mode</button>
+            <button id="dark-mode-toggle" class="btn-dark-mode">Dark Mode</button>
         </div>
     </header>
 
@@ -64,7 +64,7 @@
         <p>Sweet Brownie &copy; 2024. Todos os direitos reservados.</p>
     </footer>
 
-    <div id="qrModal" class="modal" aria-modal="true" tabindex="-1">
+    <div id="qrModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <img src="Pix.png" alt="QR Code Pix" class="qr-image">
@@ -89,13 +89,23 @@
             produtosSection.classList.toggle('dark-mode');
             footer.classList.toggle('dark-mode');
             toggleButton.classList.toggle('dark-mode');
-            produtos.forEach(produto => produto.classList.toggle('dark-mode'));
-            links.forEach(link => link.classList.toggle('dark-mode'));
+
+            produtos.forEach(produto => {
+                produto.classList.toggle('dark-mode');
+            });
+
+            links.forEach(link => {
+                link.classList.toggle('dark-mode');
+            });
+
             sobreSection.classList.toggle('dark-mode');
             sobreContainer.classList.toggle('dark-mode');
-            const isDarkMode = body.classList.contains('dark-mode');
-            toggleButton.setAttribute('aria-pressed', isDarkMode);
-            toggleButton.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
+            } else {
+                toggleButton.textContent = 'Dark Mode';
+            }
         });
 
         const modal = document.getElementById('qrModal');
@@ -128,9 +138,14 @@
 
         navLinks.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault();
+                event.preventDefault();  
+
                 const targetSection = document.querySelector(link.getAttribute('href'));
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 100,  
+                    behavior: 'smooth'  
+                });
             });
         });
     </script>
