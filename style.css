@@ -78,14 +78,10 @@ html {
 }
 
 .hero {
-    background: linear-gradient(to top, #001449, #93acff); 
+    background: linear-gradient(to top, #000000, #666666); 
     padding: 150px 20px;
     text-align: center;
     color: #fff;
-}
-
-.hero-home.dark-mode {
-    background: linear-gradient(to top, #000000, #666666 );
 }
 
 .hero.dark-mode {
