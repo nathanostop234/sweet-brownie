@@ -84,6 +84,10 @@ html {
     color: #fff;
 }
 
+.hero.home.dark-mode {
+    background: linear-gradient(to top, #000000, #666666 );
+}
+
 .hero.dark-mode {
     background-color: #3c3c3c;
 }
